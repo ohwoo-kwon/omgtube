@@ -1,0 +1,21 @@
+{
+  "name": "omgtube",
+  "version": "1.0.0",
+  "description": "The best way to watch video.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohwoo-kwon/omgtube.git"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "author": "ohwoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ohwoo-kwon/omgtube/issues"
+  },
+  "homepage": "https://github.com/ohwoo-kwon/omgtube#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
