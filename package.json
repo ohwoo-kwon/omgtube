@@ -17,5 +17,8 @@
   "homepage": "https://github.com/ohwoo-kwon/omgtube#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0"
   }
 }
