@@ -10,7 +10,6 @@ import {
 const userRouter = express.Router();
 
 userRouter.get("/logout", logout);
-userRouter.get("/login", login);
 userRouter.get("/edit", edit);
 userRouter.get("/remove", remove);
 userRouter.get("/:id", see);
