@@ -34,6 +34,7 @@
     "@babel/preset-env": "^7.16.4",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
     "nodemon": "^2.0.15",
     "sass": "^1.45.0",
     "sass-loader": "^12.4.0",
