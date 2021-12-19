@@ -1,14 +1,15 @@
 {
   "name": "omgtube",
   "version": "1.0.0",
+  "type": "module",
   "description": "The best way to watch video.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohwoo-kwon/omgtube.git"
   },
   "scripts": {
-    "dev": "nodemon --exec npx babel-node src/init.js",
-    "assets": "webpack --config webpack.config.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "author": "ohwoo",
   "license": "MIT",

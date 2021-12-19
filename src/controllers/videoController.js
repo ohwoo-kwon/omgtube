@@ -1,5 +1,5 @@
-import Video from "../models/Video";
-import User from "../models/User";
+import Video from "../models/Video.js";
+import User from "../models/User.js";
 
 export const home = async (req, res) => {
   const videos = await Video.find({}).sort({ createdAt: "desc" });
