@@ -5,7 +5,11 @@ let stream;
 let recorder;
 let videoFile;
 
-const handelDownload = () => {
+const handleDownload = () => {
+  startBtn.innerText = "Start Recording";
+  startBtn.removeEventListener("click", handleDownload);
+  startBtn.addEventListener("click", handleStart);
+
   const a = document.createElement("a");
   a.href = videoFile;
   a.download = "MyRecording.mp4";
@@ -17,7 +21,7 @@ const handelDownload = () => {
 const handleStop = () => {
   startBtn.innerText = "Download Recording";
   startBtn.removeEventListener("click", handleStop);
-  startBtn.addEventListener("click", handelDownload);
+  startBtn.addEventListener("click", handleDownload);
   recorder.stop();
 };
 
