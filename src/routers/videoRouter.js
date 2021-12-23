@@ -25,7 +25,7 @@ videoRouter.get("/upload", protectorMiddleware, getUpload);
 videoRouter.post(
   "/upload",
   protectorMiddleware,
-  videoUpload.single("video"),
+  videoUpload.fields([{ name: "video" }, { name: "thumb" }]),
   postUpload
 );
 
