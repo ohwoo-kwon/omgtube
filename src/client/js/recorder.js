@@ -1,3 +1,5 @@
+import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
+
 const startBtn = document.querySelector("#startBtn");
 const video = document.querySelector("#preview");
 
@@ -5,17 +7,27 @@ let stream;
 let recorder;
 let videoFile;
 
-const handleDownload = () => {
-  startBtn.innerText = "Start Recording";
-  startBtn.removeEventListener("click", handleDownload);
-  startBtn.addEventListener("click", handleStart);
+const handleDownload = async () => {
+  const ffmpeg = createFFmpeg({
+    corePath: "/convert/ffmpeg-core.js",
+    log: true,
+  });
+  await ffmpeg.load();
+
+  ffmpeg.FS("writeFile", "recording.webm", await fetchFile(videoFile));
+
+  await ffmpeg.run("-i", "recording.webm", "-r", "60", "output.mp4");
 
   const a = document.createElement("a");
   a.href = videoFile;
-  a.download = "MyRecording.mp4";
+  a.download = "MyRecording.webm";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+
+  startBtn.innerText = "Start Recording";
+  startBtn.removeEventListener("click", handleDownload);
+  startBtn.addEventListener("click", handleStart);
 };
 
 const handleStop = () => {
