@@ -1,13 +1,14 @@
 {
   "name": "omgtube",
   "version": "1.0.0",
-  "type": "module",
   "description": "The best way to watch video.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohwoo-kwon/omgtube.git"
   },
   "scripts": {
+    "start": "node build/init.js",
+    "build:server": "babel src -d build",
     "dev:server": "nodemon",
     "dev:assets": "webpack"
   },
@@ -34,6 +35,7 @@
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
